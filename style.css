@@ -1,0 +1,197 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-maroon-color: #780000;
+    --light-maroon-color: #C1121F;
+    --beige-color: #FDF0D5;
+    --dark-navy-color: #001c2b;
+    --light-navy-color: #003049;
+    --light-blue-color: #669BBC;
+    --blue-green-color: #20495B;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+.container {
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;    
+}
+
+#hero, #skills, #projects, #contacts {
+    height: 100vh;
+    display: flex;
+    scroll-snap-align: start;
+    flex-direction: column;
+} 
+
+
+#hero {
+    background-color: var(--light-maroon-color); /* You can replace this with your desired background color/image */
+    flex-direction: column;
+  }
+  
+#skills {
+    background-color: var(--beige-color); /* You can replace this with your desired background color/image */
+    flex-direction: column;
+
+}
+
+#projects {
+    background-color: var(--beige-color);
+}
+  
+#contacts {
+    background-color: var(--light-blue-color);
+}
+
+#hello {
+    font-family: 'Work Sans', sans-serif; /* This sets the font family */
+    font-size: 50px; /* This sets the font size */
+    color: var(--beige-color);
+}
+
+#celine {
+    font-family: 'Lora', serif; /* 'Lora' is a serif font, so the fallback is 'serif' */
+    font-size: 90px; /* This sets the font size */
+    color: #780000;
+}
+
+#data-scientist {
+    font-family: 'Hind Madurai', sans-serif; /* 'Hind Madurai' is a sans-serif font, so the fallback is 'sans-serif' */
+    font-size: 50px; /* This sets the font size */
+    color: var(--dark-maroon-color);
+}
+
+.header {
+    padding: 10px;
+}
+
+.section-title {
+    color: var(--blue-green-color);
+    font-family: 'work-sans';
+    font-size: 50px;
+    text-decoration: bold;
+    padding: 15px;
+    margin-left: 45px;
+}
+
+.skills-container{
+    padding: 40px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-cards-container {
+    padding: 10px;
+    margin: 10px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: center;
+    /* align-items: center; */
+}
+
+
+.skill-card {
+    position: relative;
+    /* display: flex; */
+    background-color: #CAEBFF;
+    padding: 10px;
+    margin: 15px;
+    border-radius: 45px;
+    min-height: 360px; /* Minimum height of 360 pixels */
+    /* max-height: 360px; */
+    transition: transform 0.7s ease, width 0.7s ease;
+    min-width: 360px;
+    box-shadow: 0 0 6px 0 rgba(32, 32, 36, 0.12);
+
+  
+}
+
+.skill-card:hover{
+    box-shadow: 0 10px 20px 0 rgba(46, 46, 70, 0.219);
+    transform: translateY(-10px) scale(1.05);
+    transition: transform 0.6s ease;
+}
+
+
+.skill-card-title {
+    color: var(--light-navy-color);
+    font-weight: 600; /* Use 600 for semi-bold, or adjust as needed */
+    font-style: italic;
+    font-size: 50px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+}
+
+
+.projects-columns-container {
+    padding: 10px;
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.project-cards-column {
+    flex-direction: column;
+    display: flex;
+    flex-grow: 1;
+    padding: 10px;
+}
+
+.project-card {
+    background-color: rgba(215, 150, 155, 0.32); /* RGBA format with 32% opacity */
+    padding: 25px;
+    margin: 15px;
+    border-radius: 45px;
+    min-height: 360px; /* Minimum height of 360 pixels */
+    min-width: 360px;
+    /* flex-grow: 1; */
+}
+
+.mini-project-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.mini-project-card {
+    background-color: rgba(215, 150, 155, 0.32); /* RGBA format with 32% opacity */
+    margin: 10px;
+    border-radius: 35px;
+    min-height: 100px; /* Minimum height of 360 pixels */
+    min-width: 100px;
+    flex-grow: 1;
+}
+
+.main-project {
+    flex-grow: 1;
+}
+
+.contacts-container {
+    display: flex;
+    flex-direction: row;
+}
+
+.pic-section {
+    padding: 20px;
+}
+
+.contact-links {
+    padding: 50px;
+}
+
+.pic-section {
+    border-radius: 50%;
+}
