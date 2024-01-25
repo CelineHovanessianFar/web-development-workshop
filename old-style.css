@@ -14,33 +14,42 @@
     --blue-green-color: #20495B;
 }
 
-
 html {
     scroll-behavior: smooth;
     background-color: rgb(253, 240, 213);
 }
 
+
+
 .container {
+    /* height: 100vh; */
     scroll-snap-type: y mandatory;
     overflow: auto;
     margin: 100px 50px;
     border-radius: 45px;
     box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+
+    /* Hide scrollbar for Webkit browsers */
     &::-webkit-scrollbar {
         display: none;
     }
-    -ms-overflow-style: none;
-    scrollbar-width: none;
+
+    /* Hide scrollbar for IE, Edge, and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }
+
 
 #hero, #skills, #projects, #contacts {
-    display: flex;
-    flex-direction: column;
-}
-
-#hero, #skills, #projects{
     height: 100vh;
-}
+    display: flex;
+    /* scroll-snap-align: start; */
+    flex-direction: column;
+    /* margin: 0px 50px 0 50px;  */
+    /* box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);  */
+    /* box-shadow: 8px 4px 8px rgba(0, 0, 0, 0.2);  */
+} 
+
 
 #hero {
     display: flex;
@@ -51,9 +60,12 @@ html {
     );
     flex-direction: column;
     border-radius: 45px 45px 0px 0px;
-    justify-content: center;
-    align-items: center;
+    /* margin-top: 80px; */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
 }
+
+
 
 #skills {
     background: linear-gradient(
@@ -64,11 +76,12 @@ html {
     flex-direction: column;
 }
 
+
 #projects {
     background: linear-gradient(
         to bottom, 
         rgba(213, 250, 253, 0.3) 0%, 
-        rgba(213, 250, 253, 0.3) 60%,
+        rgba(213, 250, 253, 0.3) 60%, /* Greater portion in this color */
         rgba(102, 155, 188, 0.5) 100%
     );
 }
@@ -76,40 +89,32 @@ html {
 #contacts {
     background-color: rgba(102, 155, 188, 0.5);
     border-radius: 0 0 45px 45px;
+    /* margin-bottom: 80px; */
 }
 
 
-
 #hello {
-    font-family: 'Work Sans', sans-serif;
-    font-size: 50px;
+    font-family: 'Work Sans', sans-serif; /* This sets the font family */
+    font-size: 50px; /* This sets the font size */
     color: var(--beige-color);
 }
 
 #celine {
-    font-family: 'Lora', serif;
-    font-size: 90px;
+    font-family: 'Lora', serif; /* 'Lora' is a serif font, so the fallback is 'serif' */
+    font-size: 90px; /* This sets the font size */
     color: #780000;
 }
 
 #data-scientist {
-    font-family: 'Hind Madurai', sans-serif;
-    font-size: 50px;
+    font-family: 'Hind Madurai', sans-serif; /* 'Hind Madurai' is a sans-serif font, so the fallback is 'sans-serif' */
+    font-size: 50px; /* This sets the font size */
     color: var(--dark-maroon-color);
 }
 
 .introduction-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    height: 100%;
-}
+    justify-items: center;
 
-.line-container {
-    text-align: center;
-    width: 100%; /* Ensures the container takes full width */
-    opacity: 0; /* Initially hidden */
 }
 
 
@@ -126,8 +131,7 @@ html {
     margin-left: 45px;
 }
 
-
-.skills-container {
+.skills-container{
     padding: 40px;
     flex-grow: 1;
     display: flex;
@@ -141,29 +145,36 @@ html {
     flex-grow: 1;
     flex-direction: row;
     justify-content: center;
+    /* align-items: center; */
 }
+
 
 .skill-card {
     position: relative;
+    /* display: flex; */
     background-color: #CAEBFF;
     padding: 10px;
     margin: 15px;
     border-radius: 45px;
-    min-height: 360px;
+    min-height: 360px; /* Minimum height of 360 pixels */
+    /* max-height: 360px; */
     transition: transform 0.7s ease, width 0.7s ease;
     min-width: 360px;
     box-shadow: 0 0 6px 0 rgba(32, 32, 36, 0.12);
+
+  
 }
 
-.skill-card:hover {
+.skill-card:hover{
     box-shadow: 0 10px 20px 0 rgba(46, 46, 70, 0.219);
     transform: translateY(-10px) scale(1.05);
     transition: transform 0.6s ease;
 }
 
+
 .skill-card-title {
     color: var(--light-navy-color);
-    font-weight: 600;
+    font-weight: 600; /* Use 600 for semi-bold, or adjust as needed */
     font-style: italic;
     font-size: 50px;
     padding: 20px;
@@ -176,8 +187,9 @@ html {
     font-family: 'Hind Madurai', sans-serif;
     color: var(--light-blue-color);
     padding: 10px 40px;
-    text-align: justify;
+    text-align: justify; 
 }
+
 
 .projects-columns-container {
     padding: 10px;
@@ -195,22 +207,17 @@ html {
 }
 
 .project-card {
-    background-color: rgba(255, 205, 211, 0.849);
+    background-color: rgba(255, 205, 211, 0.849); 
     padding: 25px;
     border-top: 3px solid rgb(255, 208, 213);
     border-left: 1px solid rgba(255, 205, 211, 1);
     margin: 15px;
     border-radius: 45px;
-    min-height: 360px;
+    min-height: 360px; 
     box-shadow: -5px -5px 0.7px rgba(255, 215, 220, 0.849), 5px 5px 9px rgba(94,104,121,0.3);
-    transition: transform 0.7s ease, width 0.7s ease;
+    /* min-width: 360px; */
 }
 
-.project-card:hover {
-    box-shadow: 0 10px 20px 0 rgba(46, 46, 70, 0.219);
-    transform: translateY(-10px) scale(1.05);
-    transition: transform 0.6s ease;
-}
 
 .mini-project-row {
     display: flex;
@@ -218,22 +225,15 @@ html {
 }
 
 .mini-project-card {
-    background-color: rgba(255, 205, 211, 0.849);
+    background-color: rgba(255, 205, 211, 0.849); /* RGBA format with 32% opacity */
     border-top: 3px solid rgb(255, 208, 213);
     border-left: 1px solid rgba(255, 205, 211, 1);
     margin: 10px;
     border-radius: 35px;
-    min-height: 100px;
+    min-height: 100px; /* Minimum height of 360 pixels */
     min-width: 100px;
     flex-grow: 1;
     box-shadow: -5px -5px 0.5px rgba(248, 215, 219, 0.849), 5px 5px 9px rgba(94,104,121,0.3);
-    transition: transform 0.7s ease, width 0.7s ease;
-}
-
-.mini-project-card:hover {
-    box-shadow: 0 10px 20px 0 rgba(46, 46, 70, 0.219);
-    transform: translateY(-10px) scale(1.05);
-    transition: transform 0.6s ease;
 }
 
 .main-project {
@@ -241,65 +241,18 @@ html {
 }
 
 .contacts-container {
-    margin-top: 40px;
     display: flex;
     flex-direction: row;
-    padding-bottom: 100px;
 }
-
-.pic-container {
-    display: flex;
-    justify-content: right;
-}
-
-
 
 .pic-section {
-    /* padding: 20px; */
-    border-radius: 50%;
-    width: 50%;
-    transition: transform 0.7s ease, width 0.7s ease;
-}
-
-
-.pic-section:hover {
-    box-shadow: 0 10px 20px 0 rgba(46, 46, 70, 0.219);
-    transform: translateY(-10px) translateX(10px) scale(5);
-    transition: transform 0.6s ease;
+    padding: 20px;
 }
 
 .contact-links {
     padding: 50px;
 }
 
-
-#talk {
-    color: var(--blue-green-color);
-    font-family: 'Lora', serif;
-    font-size: 45px;
+.pic-section {
+    border-radius: 50%;
 }
-
-.social-link {
-    color: #003049;         /* Sets the text color to black */
-    text-decoration: none; /* Removes the underline from the links */
-    font-family: 'Work Sans', sans-serif; /* Sets the font to Arial, sans-serif as an example */
-    font-size: 22px;       /* Sets the font size to 16px, you can adjust this as needed */
-    font-weight: bold;
-  }
-
-li{
-    margin-top: 10px;
-}
-  
-  .social-link:hover {
-    color: rgb(26, 111, 156);               /* Changes the text color to blue on hover */
-    cursor: pointer;           /* Changes the cursor to a pointing hand on hover */
-  }
-  
-
-  .social-list {
-    margin-top: 10px;
-    list-style-type: none;     /* Removes the bullet points */
-    padding-left: 0;           /* Optional: Removes the default padding */
-  }
-
